@@ -29,8 +29,9 @@ steps:
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'drop'
-    publishLocation: 'Container'
+    ArtifactName: 'Artifacts-drop'
+    publishLocation: 'filePath'
+    targetPath: '/' # Required when publishLocation == FilePath
 
 - task: ArchiveFiles@2
   inputs:
