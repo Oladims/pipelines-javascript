@@ -32,6 +32,7 @@ steps:
     buildType: 'current'
     downloadType: 'single'
     downloadPath: '$(System.ArtifactsDirectory)'
+    ArtifactName: 'www' # output artifact named www
 
 - task: DownloadPipelineArtifact@2
   inputs:
