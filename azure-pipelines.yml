@@ -20,6 +20,13 @@ steps:
     Contents: 'build/**' # Pull the build directory (React)
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
 
+
+- task: PublishBuildArtifacts@1
+  inputs: 
+    pathtoPublish: $(Build.ArtifactStagingDirectory) # dist or build files
+    ArtifactName: 'www' # output artifact named www
+
+
 - task: DownloadBuildArtifacts@0
   inputs:
     buildType: 'current'
@@ -30,9 +37,3 @@ steps:
   inputs:
     buildType: 'current'
     targetPath: '$(Pipeline.Workspace)'
-
-    
-- task: PublishBuildArtifacts@1
-  inputs: 
-    pathtoPublish: $(Build.ArtifactStagingDirectory) # dist or build files
-    ArtifactName: 'www' # output artifact named www
