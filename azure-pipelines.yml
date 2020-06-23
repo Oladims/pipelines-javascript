@@ -15,7 +15,7 @@ steps:
     npm run build
   displayName: 'npm install and build'
 
-- task: CopyFiles@1
+- task: CopyFiles@2
   inputs:
     Contents: 'build/**' # Pull the build directory (React)
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
